@@ -1,3 +1,5 @@
+// Task 31
+
 object Log{
   def unapply(str: String): Option[(String, String, String, String)] = {
     val parts:Array[String] = str.split(";")
