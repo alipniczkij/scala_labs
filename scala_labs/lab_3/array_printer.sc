@@ -3,21 +3,18 @@ def printer[T] (x : T) : String = x match {
   case _ => x.toString
 }
 
-//def array_printer (x : Ordered[Any]) : Unit = {
-//  if (x.isInstanceOf[Array[_]]) {
-//    for (i <- 1 to x.size) {
-//      if (x(i).isInstanceOf[Array[_]]) {
-//        array_printer(x(i))
-//      } else{
-//        print(x(i) + " ")
-//      }
-//    }
-//  }
-//}
+def array_printer (x : Seq[_]): Unit = { // Not working
+  for (el <- x) {
+    if (el.isInstanceOf[Seq[_]]) {
+      array_printer(el.asInstanceOf[Seq[_]])
+    } else print(el.toString + " ")
+  }
+  println("")
+}
 
 var a=Array.ofDim [Int] (2,3,5)
 a(0)(1)(0)=2
 
 print(printer(a(0)))
 
-//array_printer(Array(Array(0, 1), Array(2, 3)))
+array_printer(a)
