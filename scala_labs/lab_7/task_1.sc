@@ -1,9 +1,10 @@
-import java.time.LocalTime
+import java.time._
 
-implicit def lTime: LocalTime =
-  LocalTime.now()
+implicit def lTime: ZonedDateTime = {
+  ZonedDateTime.now.withZoneSameInstant(ZoneId.of("UTC"))
+}
 
-def printCurrentTime(implicit lT: LocalTime): Unit =
+def printCurrentTime(implicit lT: ZonedDateTime): Unit =
   println(lT.toString)
 
 printCurrentTime
