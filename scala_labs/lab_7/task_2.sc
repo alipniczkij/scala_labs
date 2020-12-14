@@ -7,6 +7,5 @@ implicit class ReachInt(self: AnyVal) {
     }
 }
 
-// self может относиться только к Int
 
-println(7.fib)
+println(7.fib) // 21
