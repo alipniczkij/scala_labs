@@ -1,2 +1,2 @@
-// Array[Any] Array[Int]
-// Any и Int ковариантны. Соответственно это массивы ковариантных классов
+
+println(Array[Int]().isInstanceOf[Array[Any]]) // false
